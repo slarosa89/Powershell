@@ -1,3 +1,14 @@
+<#
+This script is used to:
+-download PSTools from SysInternals website
+-extract it
+-enable PSRemoting on a remote machine
+-removes both the inial .zip and the extracted folder
+-can be used on any domain provided that the user authenticates as an Admin/Domain Admin
+#>
+
+
+
 $DOMAIN   = Read-Host -Prompt "DOMAIN: "
 $USERNAME = Read-Host -Prompt "USERNAME: "
 $PASSWORD = Read-Host -Prompt "PASSWORD: "
