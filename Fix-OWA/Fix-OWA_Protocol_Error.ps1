@@ -1,7 +1,9 @@
-#Requires being connected to 365.ps1
+#need to be connected to 365.ps1
 
 $mailbox = Read-Host "EMAIL: "
 
+Write-Host "DISABLING..."
+Get-CasMailbox $mailbox
 
 Set-CASMailbox $mailbox -EwsAllowMacOutlook $False
 Set-CASMailbox $mailbox -ImapEnabled $False
@@ -12,6 +14,9 @@ Set-CASMailbox $mailbox -EwsAllowEntourage $False
 Set-CASMailbox $mailbox -MAPIEnabled $False
 Set-CASMailbox $mailbox -ActiveSyncEnabled $False
 Set-CASMailbox $mailbox -OWAEnabled $False
+
+Write-Host "ENABLING..."
+Get-CasMailbox $mailbox
 
 Set-CASMailbox $mailbox -EwsAllowMacOutlook $True
 Set-CASMailbox $mailbox -ImapEnabled $True
